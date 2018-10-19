@@ -1,0 +1,15 @@
+#设置在Eureka看到的服务名字
+spring:
+  application:
+    name: EurekaServer
+#设置端口
+server:
+  port: 8763
+#配置这个的域名（由于只有一台电脑，所以需要配置Hosts文件）
+eureka:
+  instance:
+    hostname: peer3
+ #   配置eureka服务地址（不要向自己注册，不然出eureka页面会报错）
+  client:
+    service-url:
+     defaultZone: http://peer2:8762/eureka/,http://peer1:8761/eureka/
